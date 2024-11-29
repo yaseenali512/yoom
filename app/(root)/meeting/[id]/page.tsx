@@ -7,10 +7,10 @@ import { useGetCallById } from "@/hooks/useGetCallById";
 import { useUser } from "@clerk/nextjs";
 import { StreamCall, StreamTheme } from "@stream-io/video-react-sdk";
 import { useParams } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Page = () => {
-  const { user, isLoaded } = useUser();
+  const { isLoaded } = useUser();
   const { id } = useParams();
   const [isSetupComplete, setIsSetupComplete] = useState(false);
   const { call, isCallLoading } = useGetCallById(id);
